@@ -22,7 +22,8 @@
     <ProjectGuid>{4E9953CA-2B45-4C54-943B-A4689660C7A8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>cairo</RootNamespace>
-    <TargetPlatformVersion>10.0.10069.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -47,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -152,6 +153,12 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>freetype271.lib;pixman.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Release;$(SolutionDir)..\libs;$(SolutionDir)..\freetype\objs\vc2010\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -316,7 +323,7 @@
     <ClCompile Include="..\..\cairo\src\cairo-image-info.c" />
     <ClCompile Include="..\..\cairo\src\cairo-image-source.c" />
     <ClCompile Include="..\..\cairo\src\cairo-image-surface.c" />
-    <ClCompile Include="..\..\cairo\src\cairo-line.c" />    
+    <ClCompile Include="..\..\cairo\src\cairo-line.c" />
     <ClCompile Include="..\..\cairo\src\cairo-lzw.c" />
     <ClCompile Include="..\..\cairo\src\cairo-mask-compositor.c" />
     <ClCompile Include="..\..\cairo\src\cairo-matrix.c" />
